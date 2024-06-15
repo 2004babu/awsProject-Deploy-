@@ -20,9 +20,9 @@ app.use("/api/v1/", auth);
 app.use("/api/v1/", order);
 app.use("/api/v1/", payment);
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "../frontent/build")));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+  res.sendFile(path.join(__dirname, "../frontent/build/index.html"));
 });
 app.use(errorMidleWare);
 module.exports = app;
