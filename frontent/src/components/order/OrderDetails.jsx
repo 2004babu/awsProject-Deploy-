@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import  Loader from '../layouts/Loader';
 import {orderDetail as orderDetailAction } from '../../actions/orderAcitons';
+import MetaData from '../layouts/MetaData';
 export default function OrderDetail () {
     const { orderDetail, loading } = useSelector(state => state.orderState)
     const { shippingInfo={}, user={}, orderStatus="Processing", orderItems=[], totalPrice=0, paymentInfo={} } = orderDetail;
@@ -16,6 +17,7 @@ export default function OrderDetail () {
 
     return (
         <Fragment>
+            <MetaData title={'OrderDetails'}/>
             {   loading ? <Loader/> :
                 <Fragment>
                     <div className="row d-flex justify-content-between">

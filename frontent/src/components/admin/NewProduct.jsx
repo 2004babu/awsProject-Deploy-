@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { createNewProduct } from "../../actions/productActions";
 import { toast } from "react-toastify";
 import { clearError, clearProductCreated } from "../../slices/productSlice";
+import MetaData from "../layouts/MetaData";
 
 const NewProduct = () => {
 
@@ -74,12 +75,15 @@ const submitHandler=(e)=>{
 useEffect(()=>{
     if(isProductCreated){
         toast('product Create succeess.',{
+          type:'success',
             onOpen:()=>dispatch(clearProductCreated())
         })
           navigate('/admin/products')
     }
     if(error){
         toast(error,{
+          type:'error',
+
             onOpen:()=>dispatch(clearError())
         })
 
@@ -90,6 +94,7 @@ useEffect(()=>{
 
   return (
     <Fragment>
+      <MetaData title={'Add Product'}/>
       <div className="row">
         <div className="col-12 col-md-2">
           <SideBar />

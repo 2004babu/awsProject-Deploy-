@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { clearAuthError, resetPassword } from '../../actions/userActions'
+import MetaData from '../layouts/MetaData'
 
 const ResetPassword = () => {
     const [password,setPassword]=useState('')
@@ -45,6 +46,7 @@ const handleSubmit=(e)=>{
  
   return (
     <div className="row wrapper">
+      <MetaData title={'ResetPassword'}/>
             <div className="col-10 col-lg-5">
                 <form className="shadow-lg" onSubmit={handleSubmit}>
                     <h1 className="mb-3">New Password</h1>

@@ -4,6 +4,7 @@ import {useDispatch, useSelector}from 'react-redux'
 import { clearAuthError, forgotpassword } from '../../actions/userActions';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import MetaData from '../layouts/MetaData';
 const ForgotPassword = () => {
     const [email,setEmail]=useState()
     const dispatch=useDispatch();
@@ -47,7 +48,9 @@ const handleSubmit=(e)=>{
       }, [isAuthenticated,dispatch,message,error,navigater]);
 
   return (
+    
     <div class="row wrapper">
+      <MetaData title={'ForgotPassword'}/>
     <div class="col-10 col-lg-5">
         <form class="shadow-lg" onSubmit={handleSubmit}>
             <h1 class="mb-3">Forgot Password</h1>

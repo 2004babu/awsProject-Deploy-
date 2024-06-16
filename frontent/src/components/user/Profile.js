@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import MetaData from '../layouts/MetaData'
 
 const Profile = () => {
 
@@ -9,6 +10,7 @@ const Profile = () => {
 const formattedDate = createAt.toISOString().substring(0, 10);
   return (
     <div className="row justify-content-around mt-5 user-info">
+        <MetaData title={'My profile'}/>
     <div className="col-12 col-md-3">
         <figure className='avatar avatar-profile'>
             <img className="rounded-circle img-fluid" src={user.avatar} alt='profile avatar' />

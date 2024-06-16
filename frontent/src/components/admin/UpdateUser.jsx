@@ -8,6 +8,7 @@ import {
  clearUserUpdated
 } from "../../slices/userSlice";
 import { getUser, updateUser } from "../../actions/userActions";
+import MetaData from "../layouts/MetaData";
 
 const UpdateProduct = () => {
   const {
@@ -62,6 +63,7 @@ const UpdateProduct = () => {
 
   return (
     <Fragment>
+      <MetaData title={'UpdateUser'}/>
       <div className="row">
         <div className="col-12 col-md-2">
           <SideBar />

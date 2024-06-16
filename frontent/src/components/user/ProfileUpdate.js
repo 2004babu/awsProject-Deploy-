@@ -4,16 +4,17 @@ import { updateProfile as updateProfileAction } from "../../actions/userActions"
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { clearUpdateProfile } from "../../slices/authSlice";
+import MetaData from "../layouts/MetaData";
 const ProfileUpdate = () => {
-  const dispatch = useDispatch();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [avatar, setAvatar] = useState("");
-  const [avatarPreview, setAvatarPreview] = useState("./images/profile.jpg");
-  const navigater = useNavigate();
-  const { isAuthenticated, loading, error ,isUpdated} = useSelector(
+  const { isAuthenticated, loading, error ,isUpdated,user} = useSelector(
     (state) => state.authState
   );
+  const dispatch = useDispatch();
+  const [name, setName] = useState(user.name);
+  const [email, setEmail] = useState(user.email);
+  const [avatar, setAvatar] = useState(user.avatar);
+  const [avatarPreview, setAvatarPreview] = useState(user.avatar);
+  const navigater = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,6 +57,7 @@ const ProfileUpdate = () => {
  
   return (
     <Fragment>
+      <MetaData title={'UpdateProfile'}/>
       <div className="row wrapper">
         <div className="col-10 col-lg-5">
           <form

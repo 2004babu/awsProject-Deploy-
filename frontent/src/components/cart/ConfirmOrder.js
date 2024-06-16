@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react'
 import { validateShipping } from './Shipping'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import MetaData from '../layouts/MetaData';
 
 const ConfirmOrder = () => {
     const dispatch = useDispatch();
@@ -31,6 +32,7 @@ const ConfirmOrder = () => {
 
   return (
         <div className="row d-flex justify-content-between">
+            
                 <div className="col-12 col-lg-8 mt-5 order-confirm">
                     <h4 className="mb-3">Shipping Info</h4>
                     <p><b>Name:</b>{user.name}</p>

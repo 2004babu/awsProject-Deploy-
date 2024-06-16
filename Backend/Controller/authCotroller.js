@@ -195,6 +195,7 @@ exports.updateProfile=catchAsyncError(async(req,res,next)=>{
     if(process.env.NODE_ENV === "production"){
         BASE_URL = `${req.protocol}://${req.get('host')}`
     }
+    
     if (req.file) {
         avatar= `${BASE_URL}/uploads/user/${req.file.originalname}`
         newUserData={...newUserData,avatar}

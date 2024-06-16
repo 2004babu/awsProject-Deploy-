@@ -9,6 +9,7 @@ import {
   orderDetail as orderDetailAction,
   updateOrder,
 } from "../../actions/orderAcitons";
+import MetaData from "../layouts/MetaData";
 
 const UpdateOrder = () => {
   const {
@@ -64,6 +65,7 @@ const UpdateOrder = () => {
   },[orderDetail])
   return (
     <div className="row">
+      <MetaData title={'UpdateOrder'}/>
       <div className="col-12 col-md-2">
         <SideBar />
       </div>

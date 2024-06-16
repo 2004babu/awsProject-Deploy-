@@ -4,6 +4,7 @@ import { UpdatePassword } from "../../actions/userActions";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { clearupdatePassword } from "../../slices/authSlice";
+import MetaData from "../layouts/MetaData";
 
 
 
@@ -45,6 +46,7 @@ useEffect(() => {
 }, [isAuthenticated, error,isUpdated,dispatch,navigater]);
   return (
     <div className="row wrapper">
+      <MetaData title={'UpdatePassword'}/>
       <div className="col-10 col-lg-5">
         <form className="shadow-lg" onSubmit={handleSubmit}>
           <h1 className="mt-2 mb-5">Update Password</h1>

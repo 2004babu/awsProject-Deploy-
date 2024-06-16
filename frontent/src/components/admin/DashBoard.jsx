@@ -5,6 +5,7 @@ import { getAdminProducts } from "../../actions/productActions";
 import { adminOrderDetail } from "../../actions/orderAcitons";
 import { Link } from "react-router-dom";
 import { getAllUsers } from "../../actions/userActions";
+import MetaData from "../layouts/MetaData";
 const DashBoard = () => {
   const dispatch = useDispatch();
 
@@ -36,6 +37,7 @@ const DashBoard = () => {
   }, [dispatch]);
   return (
     <Fragment>
+      <MetaData title={'DashBoard'}/>
       <div className="row">
         <div className="col-12 col-md-2">
           <SideBar />

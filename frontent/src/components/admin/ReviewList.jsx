@@ -6,6 +6,7 @@ import Loader from "../layouts/Loader";
 import { toast } from "react-toastify";
 import { clearReviewDeleted,clearError } from "../../slices/productSlice";
 import { deleteReviews, getAllReviews } from "../../actions/productActions";
+import MetaData from "../layouts/MetaData";
 
 const OrderList = () => {
   const {isReviewDeleted=null ,reviews=[] ,loading=true,error =null } = useSelector((state) => state.productState);
@@ -30,7 +31,9 @@ const submitHandler=(e)=>{
         toast(error,{
             type:"error",
             onOpen:()=>dispatch(clearError())
+            
         })
+        setProductId('')
         return;
 
     }
@@ -99,6 +102,7 @@ const submitHandler=(e)=>{
 
   return (
     <Fragment>
+      <MetaData title={'ReviewList'}/>
          <div className="row">
          <div className="col-12 col-md-2">
            <SideBar />

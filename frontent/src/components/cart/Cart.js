@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { decreaseCartItem, increaseCartItem, removeItemFormCart } from '../../slices/cartslice';
+import MetaData from '../layouts/MetaData';
 
 const Cart = () => {
     const dispatch=useDispatch()
@@ -21,6 +22,7 @@ const Cart = () => {
     
   return (
     <Fragment>
+        <MetaData title={'Cart'}/>
                 {items.length==0 ?
                  <h2 className="mt-5">Your Cart Is empty</h2> :
                 <Fragment>

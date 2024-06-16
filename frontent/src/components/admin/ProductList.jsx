@@ -8,6 +8,7 @@ import Loader from "../layouts/Loader";
 import { toast } from "react-toastify";
 import {clearError} from '../../slices/productsSlice'
 import { clearProductDeleted } from "../../slices/productSlice";
+import MetaData from "../layouts/MetaData";
 
 const ProductList = () => {
   const { products = [] ,loading=true,error =null } = useSelector((state) => state.productsState);
@@ -25,6 +26,8 @@ console.log(id);
   useEffect(() => {
     if (error||deleteTimeError) {
         toast(error||deleteTimeError,{
+          type:'error',
+
             onOpen:()=>dispatch(clearError())
         })
         return;
@@ -32,6 +35,8 @@ console.log(id);
     }
     if (isProductDeleted) {
         toast('product Deleted Success',{
+          type:'success',
+
             onOpen:()=>dispatch(clearProductDeleted())
         })
         return;
@@ -94,6 +99,7 @@ console.log(id);
 
   return (
     <Fragment>
+      <MetaData title={'ProductList'}/>
          <div className="row">
          <div className="col-12 col-md-2">
            <SideBar />

@@ -9,12 +9,14 @@ import {
   clearProductCreated,
   clearProductUpdated,
 } from "../../slices/productSlice";
+import MetaData from "../layouts/MetaData";
 
 const UpdateProduct = () => {
   const {
     isProductUpdated = null,
     error = null,
     product ={},
+    loading=false
   } = useSelector((state) => state.productState);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -121,6 +123,7 @@ const UpdateProduct = () => {
   };
   return (
     <Fragment>
+      <MetaData title={'Update Product'}/>
       <div className="row">
         <div className="col-12 col-md-2">
           <SideBar />
@@ -240,6 +243,7 @@ const UpdateProduct = () => {
                 id="login_button"
                 type="submit"
                 className="btn btn-block py-3"
+                disabled={loading}
               >
                 UPDATE
               </button>

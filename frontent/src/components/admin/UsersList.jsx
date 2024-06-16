@@ -16,6 +16,7 @@ import {
   clearUserDeleted,
   clearUserUpdated,
 } from "../../slices/userSlice";
+import MetaData from "../layouts/MetaData";
 
 const UsersList = () => {
   const {
@@ -113,6 +114,7 @@ const UsersList = () => {
 
   return (
     <Fragment>
+      <MetaData title={'UserList'}/>
       <div className="row">
         <div className="col-12 col-md-2">
           <SideBar />

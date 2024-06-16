@@ -7,6 +7,7 @@ import Loader from "../layouts/Loader";
 import { toast } from "react-toastify";
 import {clearDeleteOrder, clearError} from '../../slices/orderSlice'
 import { adminOrderDetail, orderDelete } from "../../actions/orderAcitons";
+import MetaData from "../layouts/MetaData";
 
 const OrderList = () => {
   const { orderDetail ={} ,loading=true,error =null ,isOrderDeleted=null} = useSelector((state) => state.orderState);
@@ -95,6 +96,7 @@ console.log(id);
 
   return (
     <Fragment>
+      <MetaData title={'Order List'}/>
          <div className="row">
          <div className="col-12 col-md-2">
            <SideBar />

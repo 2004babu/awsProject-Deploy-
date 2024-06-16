@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { saveShippingInfo } from "../../slices/cartslice";
 import CheckoutStep from "./CheckoutStep";
+import MetaData from "../layouts/MetaData";
 
 export const validateShipping = (shippingInfo, navigate) => {
    
@@ -47,6 +48,7 @@ export default function Shipping() {
     return (
         <Fragment>
             <CheckoutStep shipping={true} />
+            <MetaData title={'Shipping'}/>
             <div className="row wrapper">
                     <div className="col-10 col-lg-5">
                         <form onSubmit={submitHandler} className="shadow-lg">

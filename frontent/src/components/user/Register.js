@@ -4,6 +4,7 @@ import {useDispatch, useSelector } from 'react-redux'
 import { register, clearAuthError } from '../../actions/userActions'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import MetaData from '../layouts/MetaData';
 
 export default function Register() {
     const [userData, setUserData] = useState({
@@ -61,6 +62,7 @@ export default function Register() {
 
     return (
         <div className="row wrapper">
+            <MetaData title={'Register'}/>
             <div className="col-10 col-lg-5">
             <form onSubmit={submitHandler} className="shadow-lg" encType='multipart/form-data'>
                 <h1 className="mb-3">Register</h1>
