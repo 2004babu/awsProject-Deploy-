@@ -17,7 +17,7 @@ exports.registerUser=catchAsyncError(async(req,res,next)=>{
     let avatar;
 
     let BASE_URL = process.env.BACKEND_URL;
-    if(process.env.NODE_ENV === "production"){
+    if(process.env.NODE_ENV === "Production"){
         BASE_URL = `${req.protocol}://${req.get('host')}`
     }
     if (req.file) {
