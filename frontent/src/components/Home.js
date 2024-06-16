@@ -10,9 +10,9 @@ import { clearError } from "../slices/productSlice";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const { products = [], loading = true, error=null, productsCount =0, resPerPage =0 } = useSelector((state) => state.productsState);
+  const { products = [], loading = true, error = null, productsCount = 0, resPerPage = 0 } = useSelector((state) => state.productsState);
   const [currentPage, setCurrentPage] = useState(1);
-  
+
   const setCurrentPageNo = (pageNo) => {
     setCurrentPage(pageNo);
   };
@@ -23,10 +23,10 @@ export default function Home() {
         position: toast.POSITION.BOTTOM_CENTER,
       });
       dispatch(clearError()); // Clear error to prevent infinite loop
+      return;
+    } else {
+      dispatch(getProducts(null, null, null, null, currentPage));
     }
-
-    dispatch(getProducts(null, null, null, null, currentPage));
-
     // No cleanup function needed here
   }, [error, dispatch, currentPage]);
 
@@ -47,19 +47,18 @@ export default function Home() {
           </section>
           {productsCount > 0 && productsCount > resPerPage ? (
             <div className="d-flex justify-content-center mt-5">
-              <Pagination
-                activePage={currentPage}
-                onChange={setCurrentPageNo}
-                totalItemsCount={productsCount}
-                itemsCountPerPage={resPerPage}
-                nextPageText={'Next'}
-                firstPageText={'First'}
-                lastPageText={'Last'}
-                itemclassName={'page-item'}
-                linkclassName={'page-link'}
-              />
-            </div>
-          ) : null} 
+                <Pagination 
+                                activePage={currentPage}
+                                onChange={setCurrentPageNo}
+                                totalItemsCount={productsCount}
+                                itemsCountPerPage={resPerPage}
+                                nextPageText={'Next'}
+                                firstPageText={'First'}
+                                lastPageText={'Last'}
+                                itemClass={'page-item'}
+                                linkClass={'page-link'}
+                           />    </div>
+          ) : null}
         </Fragment>
       )}
     </Fragment>

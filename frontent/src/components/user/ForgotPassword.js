@@ -44,7 +44,7 @@ const handleSubmit=(e)=>{
           });
           return
         }
-      }, [isAuthenticated,dispatch,message,error]);
+      }, [isAuthenticated,dispatch,message,error,navigater]);
 
   return (
     <div class="row wrapper">

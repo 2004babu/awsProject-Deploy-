@@ -11,10 +11,8 @@ export default function ProtectedRoute ({children}) {
     }
 
     if(isAuthenticated) {
-        if(user.role !== 'admin') {
-            return <Navigate to="/" />
-        }
         return children;
+        
     }
 
     if(loading) {
